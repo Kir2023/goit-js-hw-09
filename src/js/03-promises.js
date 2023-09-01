@@ -22,6 +22,7 @@ btnCreatePromise.addEventListener('click', e => {
   e.preventDefault();
   let firstDelay = Number(delay.value);
   let delayStep = Number(step.value);
+  if (step.value > 0 && delay.value > 0 &&  amount.value >= 0) {
   for (let i = 0; i < amount.value; i++) {
     createPromise(1 + i, firstDelay + i * delayStep)
       .then(({ position, delay }) => {
@@ -34,5 +35,7 @@ btnCreatePromise.addEventListener('click', e => {
           `❌ Rejected promise ${position} in ${delay}ms`
         );
       });
-  }
-});
+  } } else {
+  Notiflix.Notify.failure('Please use only positive numbers');
+}
+}); 

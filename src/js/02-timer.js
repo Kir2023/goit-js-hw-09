@@ -23,6 +23,7 @@ const options = {
       btnStart.disabled = true;
     } else {
       btnStart.disabled = false;
+      text.disabled = true;
     }
   },
 };
